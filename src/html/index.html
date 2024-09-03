@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Interativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/fotos-gratis/nuvens-de-estilo-fotorrealista_23-2151058943.jpg?w=1380&t=st=1725405743~exp=1725406343~hmac=fff7bb5496f771694227a1c332037eb6e9c01b132a8b98d3ab0ae12b093dcb0d'); 
+            background-size: cover;
+            background-position: auto;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calendário Interativo</h1>
+        <p>Informe o dia que gostaria de acessar o valor no período de 30 dias:</p>
+        
+        <form id="calendarForm">
+            <label for="dayInput">Dia:</label>
+            <input type="number" id="dayInput" name="dayInput" min="1" max="30" required>
+            <button type="submit" class="button">Ver Valor</button>
+        </form>
+        
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('calendarForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const day = document.getElementById('dayInput').value;
+            let value;
+            
+            switch (parseInt(day)) {
+                case 1: value = "22174.1664"; break;
+                case 2: value = "24537.6698"; break;
+                case 3: value = "26139.6134"; break;
+                case 4: value = "0.0"; break;
+                case 5: value = "0.0"; break;
+                case 6: value = "26742.6612"; break;
+                case 7: value = "0.0"; break;
+                case 8: value = "42889.2258"; break;
+                case 9: value = "46251.174"; break;
+                case 10: value = "11191.4722"; break;
+                case 11: value = "0.0"; break;
+                case 12: value = "0.0"; break;
+                case 13: value = "3847.4823"; break;
+                case 14: value = "373.7838"; break;
+                case 15: value = "2659.7563"; break;
+                case 16: value = "48924.2448"; break;
+                case 17: value = "18419.2614"; break;
+                case 18: value = "0.0"; break;
+                case 19: value = "0.0"; break;
+                case 20: value = "35240.182"; break;
+                case 21: value = "43829.1667"; break;
+                case 22: value = "18235.6852"; break;
+                case 23: value = "4355.0662"; break;
+                case 24: value = "13327.1025"; break;
+                case 25: value = "0.0"; break;
+                case 26: value = "0.0"; break;
+                case 27: value = "25681.8318"; break;
+                case 28: value = "1718.1221"; break;
+                case 29: value = "13220.495"; break;
+                case 30: value = "8414.61"; break;
+                default: value = "Opção inválida.";
+            }
+
+            document.getElementById('result').innerText = `Valor: ${value}`;
+        });
+    </script>
+
+</body>
+</html>
